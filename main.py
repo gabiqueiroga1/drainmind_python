@@ -3,13 +3,22 @@
 
 # Cria um dicionário para armazenar as informações de monitoramento
 bueiros = {
-    'id': [],             
-    'localizacao': [],    
-    'nivel_agua': [],     
-    'status_tampa': [],   
-    'obstrucao': [],      
-    'prioridade': []      
+    'id': [],
+    'localizacao': [],
+    'nivel_agua': [],
+    'status_tampa': [],
+    'obstrucao': [],
+    'prioridade': []
 }
+
+indices = {bueiros['id'][i] : i for i in range(len(bueiros['id']))}
+
+
+# Atualiza os indices
+def atualiza_indices():
+  indices = {bueiros['id'][i] : i for i in range(len(bueiros['id']))}
+  return indices
+
 
 # Função para forçar o usuário a escolher uma opções de uma lista
 def forca_opcao(msg, lista_opcoes, msg_erro='Inválido'):
@@ -24,33 +33,26 @@ def forca_opcao(msg, lista_opcoes, msg_erro='Inválido'):
 def checa_numero(msg):
     try:
         num = int(input(msg))                                 # tenta converter a entrada para inteiro
-        return num                                        
+        return num
     except ValueError:                                       # erro para se falhar na conversão
-        print("Deve ser um número inteiro válido!")   
+        print("Deve ser um número inteiro válido!")
         return checa_numero(msg)                              # chama a função dnv
 
 # Função para cadastrar um novo bueiro
 def cadastrar_bueiro():
     try:
-        novo_id = input("ID do bueiro: ")                    # pede o ID do novo bueiro
-        if novo_id in bueiros['id']:                         # verifica se o ID já está cadastrado
-            print("Erro: ID já cadastrado!")                 
-            return     
-        #pede dados do bueiro                                       
-        local = input("Localização: ")                        
-        nivel = checa_numero("Nível da água (cm): ")         
-        status = forca_opcao("Status da tampa:", ['Aberta', 'Fechada', 'Danificada'])  
-        obstrucao = forca_opcao("Obstrução presente?", ['Sim', 'Não'])  
-        prioridade = forca_opcao("Prioridade:", ['Baixa', 'Média', 'Alta'])          
-
-        # adiciona os dados nas respectivas listas do dicionário
-        bueiros['id'].append(novo_id)
-        bueiros['localizacao'].append(local)
-        bueiros['nivel_agua'].append(nivel)
-        bueiros['status_tampa'].append(status)
-        bueiros['obstrucao'].append(obstrucao)
-        bueiros['prioridade'].append(prioridade)
-
+        for key in bueiros.keys():                                                                #valida as informaçoes
+          if key == 'nivel_agua':
+            info = checa_numero(f'Qual o nível da água(cm): ')
+          elif key == 'status_tampa':
+            info = forca_opcao(f'Qual o status da tampa: ', ['Fechada','Aberta','Quebrada'])
+          elif key == 'obstrucao':
+            info = forca_opcao(f'Obstrução presente: ', ['Sim','Não'])
+          elif key == 'prioridade':
+            info = forca_opcao(f'Nível de prioridade: ', ['Baixa', 'Média', 'Alta'])
+          else:
+            info = input(f"Diga o/a {key}: ")
+          bueiros[key].append(info)
         print("Bueiro cadastrado com sucesso!")               # confirma cadastro
     except Exception as e:                                     # erros genéricos
         print(f"Erro ao cadastrar bueiro: {e}")               # exibe mensagem de erro
@@ -59,19 +61,18 @@ def cadastrar_bueiro():
 def atualizar_bueiro():
     try:
         if not bueiros['id']:                                # se não tem bueiros cadastrados
-            print("Nenhum bueiro cadastrado.")       
-            return                                        
+            print("Nenhum bueiro cadastrado.")
+            return
         bueiro_id = forca_opcao("Informe o ID do bueiro para atualizar:", bueiros['id'])  # pede o ID válido
-        indice = bueiros['id'].index(bueiro_id)             # obtém o índice do bueiro no dicionário
-
-        # para cada campo no dicionário, permite atualização
+        indices = atualiza_indices()
+        indice_bueiro = indices[bueiro_id]
         for key in bueiros.keys():
             novo = input(f"Novo {key} (enter para não atualizar): ")  # pede novo valor (ou enter para manter)
             if novo:
                 if key == 'nivel_agua':                        # se for nível de água, converte para int
-                    bueiros[key][indice] = int(novo)
+                    bueiros[key][indice_bueiro] = int(novo)
                 else:
-                    bueiros[key][indice] = novo               # atualiza o valor
+                    bueiros[key][indice_bueiro] = novo               # atualiza o valor
 
         print("Bueiro atualizado com sucesso!")               # confirma atualização
     except ValueError:
@@ -83,14 +84,13 @@ def atualizar_bueiro():
 def remover_bueiro():
     try:
         if not bueiros['id']:                                # verifica se há bueiros cadastrados
-            print("Nenhum bueiro cadastrado.")         
+            print("Nenhum bueiro cadastrado.")
             return
         bueiro_id = forca_opcao("Informe o ID do bueiro para remover:", bueiros['id'])  # pede ID válido
-        indice = bueiros['id'].index(bueiro_id)             # pega o índice do bueiro
-
-
+        indices = atualiza_indices()
+        indice_bueiro = indices[bueiro_id]            # pega o índice do bueiro
         for key in bueiros.keys():                   # remove o bueiro em todas as listas
-            bueiros[key].pop(indice)
+            bueiros[key].pop(indice_bueiro)
 
         print("Bueiro removido!")                             # confirma remoção
     except ValueError:
@@ -102,12 +102,14 @@ def remover_bueiro():
 def consultar_bueiro():
     try:
         if not bueiros['id']:                                # verifica se há bueiros cadastrados
-            print("Nenhum bueiro cadastrado.")            
+            print("Nenhum bueiro cadastrado.")
+            return
         bueiro_id = forca_opcao("Informe o ID do bueiro para consultar:", bueiros['id'])  # pede ID válido
-        indice = bueiros['id'].index(bueiro_id)             # obtém índice do bueiro
+        indices = atualiza_indices()
+        indice_bueiro = indices[bueiro_id]            # obtém índice do bueiro
         print("\n Dados do bueiro:")
         for key in bueiros.keys():                           # mostra cada campo e seu valor correspondente
-            print(f"{key}: {bueiros[key][indice]}")
+            print(f"{key}: {bueiros[key][indice_bueiro]}")
     except ValueError:
         print("Erro: ID não encontrado.")                    # erro caso ID inválido
     except Exception as e:
@@ -117,7 +119,7 @@ def consultar_bueiro():
 def relatorio_bueiros():
     try:
         if not bueiros['id']:                                # verifica se há bueiros cadastrados
-            print("Nenhum bueiro cadastrado.")       
+            print("Nenhum bueiro cadastrado.")
             return
         print("\n Relatório de todos os bueiros:")
         for i in range(len(bueiros['id'])):                  # para cada bueiro
@@ -144,35 +146,31 @@ acoes_cidadao = {
 # Função principal do sistema
 def sistema_bueiros():
     print("Bem-vindo ao Sistema de Monitoramento de Bueiros!")
-    try:
-        tipo_usuario = forca_opcao("Qual seu papel?", ['técnico', 'cidadão'])  # pede papel do usuário
+    
+    tipo_usuario = forca_opcao("Qual seu papel?", ['técnico', 'cidadão'])  # pede papel do usuário
 
-        if tipo_usuario == 'técnico':
-            while True:                                               # laço para ações do técnico
-                acao = forca_opcao("O que deseja fazer?", list(acoes_tecnico.keys()) + ['sair'])
-                if acao == 'sair':                                    # sai do perfil técnico
-                    print("Encerrando perfil técnico.")
-                    break
-                acoes_tecnico[acao]()                                 # executa a ação escolhida
-        else:  # Cidadão
-            while True:                                               # laço para ações do cidadão
-                acao = forca_opcao("O que deseja fazer?", list(acoes_cidadao.keys()) + ['sair'])
-                if acao == 'sair':                                    # sai do perfil cidadão
-                    print("Encerrando perfil cidadão.")
-                    break
-                acoes_cidadao[acao]()                                 # executa a ação escolhida
-    except KeyboardInterrupt:                                        # captura interrupção via teclado
-        print("\n Sistema encerrado pelo usuário.")
-    except Exception as e:                                           # captura erros gerais do sistema
-        print(f"Erro geral no sistema: {e}")
+    if tipo_usuario == 'técnico':
+        while True:                                               # laço para ações do técnico
+            acao = forca_opcao("O que deseja fazer?", list(acoes_tecnico.keys()) + ['sair'])
+            if acao == 'sair':                                    # sai do perfil técnico
+                print("Encerrando perfil técnico.")
+                break
+            acoes_tecnico[acao]()                                 # executa a ação escolhida
+    else:  # Cidadão
+        while True:                                               # laço para ações do cidadão
+            acao = forca_opcao("O que deseja fazer?", list(acoes_cidadao.keys()) + ['sair'])
+            if acao == 'sair':                                    # sai do perfil cidadão
+                print("Encerrando perfil cidadão.")
+                break
+            acoes_cidadao[acao]()                                 # executa a ação escolhida
 
-# Laço principal 
-# Chama a função principal 
+# Laço principal
+# Chama a função principal
 # Pergunta se o usuário quer continuar
 # Se não, encerra o programa
 while True:
-    sistema_bueiros()                                              
-    continuar = forca_opcao("Deseja continuar no sistema?", ['sim', 'não']) 
-    if continuar == 'não':                                       
+    sistema_bueiros()
+    continuar = forca_opcao("Deseja continuar no sistema?", ['sim', 'não'])
+    if continuar == 'não':
         print(" Sistema finalizado. Até logo!")
         break
