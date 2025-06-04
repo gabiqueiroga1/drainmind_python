@@ -23,7 +23,9 @@ A DrainMind é uma solução inteligente que utiliza tecnologia para monitorar e
 - 𝙶𝚊𝚋𝚛𝚒𝚎𝚕𝚊 𝚀𝚞𝚎𝚒𝚛𝚘𝚐𝚊 Cocuzza da Silva      560035
 - 𝙶𝚒𝚝𝙷𝚞𝚋    https://github.com/gabiqueiroga1
 - 𝙻𝚒𝚗𝚔𝚎𝚍𝚒𝚗   https://www.linkedin.com/in/gabriela-queiroga-493260338/
+
 <hr>
+
 - 𝙼𝚊𝚛𝚒𝚊 𝙴𝚍𝚞𝚊𝚛𝚍𝚊 𝙵𝚎𝚛𝚛𝚎́𝚜   560418
 - 𝙶𝚒𝚝𝙷𝚞𝚋    https://github.com/dudaferres
 - 𝙻𝚒𝚗𝚔𝚎𝚍𝚒𝚗   https://www.linkedin.com/in/mariaeduardaferres/
