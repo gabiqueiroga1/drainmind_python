@@ -1,1 +1,25 @@
-# gs_python
+<h1 align="center">DrainMind - Sistema de Monitoramento de bueiros</h1>
+<br>
+<br>
+
+**𝘛𝘦𝘤𝘯𝘰𝘭𝘰𝘨𝘪𝘢𝘴 𝘜𝘵𝘪𝘭𝘪𝘻𝘢𝘥𝘢𝘴**  
+
+- <img src="https://skillicons.dev/icons?i=py" />  : Crianção do Código
+  
+<hr>
+
+**Programas Utilizados**
+
+- - <img src="https://skillicons.dev/icons?i=vscode" />   : VSCode
+
+**𝘋𝘦𝘴𝘦𝘯𝘷𝘰𝘭𝘷𝘦𝘥𝘰𝘳𝘢**
+
+- 𝙶𝚊𝚋𝚛𝚒𝚎𝚕𝚊 𝚀𝚞𝚎𝚒𝚛𝚘𝚐𝚊 Cocuzza da Silva      560035
+- 𝙶𝚒𝚝𝙷𝚞𝚋    https://github.com/gabiqueiroga1
+- 𝙻𝚒𝚗𝚔𝚎𝚍𝚒𝚗   https://www.linkedin.com/in/gabriela-queiroga-493260338/
+
+- 𝙼𝚊𝚛𝚒𝚊 𝙴𝚍𝚞𝚊𝚛𝚍𝚊 𝙵𝚎𝚛𝚛𝚎́𝚜   560418
+- 𝙶𝚒𝚝𝙷𝚞𝚋    https://github.com/dudaferres
+- 𝙻𝚒𝚗𝚔𝚎𝚍𝚒𝚗   https://www.linkedin.com/in/mariaeduardaferres/
+
+
