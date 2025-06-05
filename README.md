@@ -1,33 +1,43 @@
-<h1 align="center">DrainMind - Sistema de Monitoramento de bueiros</h1>
-<br>
-<br>
+<h1 align="center">💧 DrainMind - Sistema Inteligente de Monitoramento de Bueiros</h1>
 
-**Sobre o Projeto**  
+<p align="center">
+  Uma solução baseada em tecnologia para prevenir alagamentos urbanos por meio do monitoramento e controle do escoamento de água da chuva.
+</p>
 
-A DrainMind é uma solução inteligente que utiliza tecnologia para monitorar e gerenciar o escoamento de água da chuva em bueiros, ajudando a prevenir alagamentos e enchentes por meio do controle eficiente dessas informações.
+---
 
-<hr>
+## 📌 Sobre o Projeto
 
-**Tecnologia utilizada**  
+A **DrainMind** é uma solução inteligente que utiliza sensores, câmeras e inteligência artificial para monitorar bueiros e gerenciar o escoamento pluvial em áreas urbanas.  
+Nosso objetivo é reduzir os riscos de alagamentos e enchentes por meio da coleta e análise de dados em tempo real, oferecendo uma abordagem proativa para o controle de drenagem urbana.
 
-- <img src="https://skillicons.dev/icons?i=py" />  : Construção do sistema
-  
-<hr>
+---
 
-**Programas Utilizados**
+## 🛠️ Tecnologias Utilizadas
 
-- <img src="https://skillicons.dev/icons?i=vscode" />   : VSCode
+<div align="left">
+  <img src="https://skillicons.dev/icons?i=py" alt="Python" />
+</div>
 
-**𝘋𝘦𝘴𝘦𝘯𝘷𝘰𝘭𝘷𝘦𝘥𝘰𝘳𝘢**
+---
 
-- 𝙶𝚊𝚋𝚛𝚒𝚎𝚕𝚊 𝚀𝚞𝚎𝚒𝚛𝚘𝚐𝚊 Cocuzza da Silva      560035
-- 𝙶𝚒𝚝𝙷𝚞𝚋    https://github.com/gabiqueiroga1
-- 𝙻𝚒𝚗𝚔𝚎𝚍𝚒𝚗   https://www.linkedin.com/in/gabriela-queiroga-493260338/
+## 🧑‍💻 IDE utilizada
 
-<hr>
+<div align="left">
+  <img src="https://skillicons.dev/icons?i=vscode" alt="VSCode" />
+</div>
 
-- 𝙼𝚊𝚛𝚒𝚊 𝙴𝚍𝚞𝚊𝚛𝚍𝚊 𝙵𝚎𝚛𝚛𝚎́𝚜   560418
-- 𝙶𝚒𝚝𝙷𝚞𝚋    https://github.com/dudaferres
-- 𝙻𝚒𝚗𝚔𝚎𝚍𝚒𝚗   https://www.linkedin.com/in/mariaeduardaferres/
+---
 
+## 📢 Links para os Vídeos no Youtube
 
+[🔗 Explicação do código](https://wokwi.com/projects/432396740170267649)
+
+[📖 Pitch](https://www.youtube.com/watch?v=SLZlR1FCg-s)
+
+---
+
+## 💌 Integrantes
+
+- **Maria Eduarda Ferrés** – RM 560418  
+- **Gabriela Queiroga Cocuzza da Silva** – RM 560035
