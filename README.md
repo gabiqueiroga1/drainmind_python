@@ -31,13 +31,15 @@ Nosso objetivo é reduzir os riscos de alagamentos e enchentes por meio da colet
 
 ## 📢 Links para os Vídeos no Youtube
 
-[🔗 Explicação do código](https://wokwi.com/projects/432396740170267649)
+[🔗 Explicação do código](https://youtu.be/HgEfesLyNLQ)
 
 [📖 Pitch](https://www.youtube.com/watch?v=SLZlR1FCg-s)
 
 ---
 
 ## 💌 Integrantes
+
+1ESPB
 
 - **Maria Eduarda Ferrés** – RM 560418  
 - **Gabriela Queiroga Cocuzza da Silva** – RM 560035
